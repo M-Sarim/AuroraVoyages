@@ -11,73 +11,85 @@
 
 ## 🌍 Overview
 
-**Aurora Voyages** is a cloud-native travel booking application developed as a course project to explore **microservices architecture**, **Docker containerization**, and **inter-service communication**. The platform simulates a complete travel ecosystem — from user registration to payment processing and real-time notifications.
+**Aurora Voyages** is a full-featured, cloud-native **travel booking application** built using **microservices architecture**. Designed as a course project, it demonstrates modern practices such as **Docker-based containerization**, **RESTful API design**, **inter-service messaging**, and **scalable service orchestration**. The platform simulates a real-world travel ecosystem — enabling everything from user registration to trip booking, payments, and real-time notifications.
 
 ---
 
 ## 📚 Table of Contents
 
-- [🌍 Overview](#-overview)
-- [📦 Features](#-features)
-- [🔧 Architecture](#-architecture)
-- [⚙️ Installation](#️-installation)
-- [🚀 Usage](#-usage)
-- [🧪 API Testing](#-api-testing)
-- [📁 Project Structure](#-project-structure)
-- [🔧 Configuration](#-configuration)
-- [📚 Documentation](#-documentation)
-- [🐞 Troubleshooting](#-troubleshooting)
-- [🤝 Contributors](#-contributors)
-- [📄 License](#-license)
+* [🌍 Overview](#-overview)
+* [📦 Features](#-features)
+* [🔧 Architecture](#-architecture)
+* [⚙️ Installation](#️-installation)
+* [🚀 Usage](#-usage)
+* [🧪 API Testing](#-api-testing)
+* [📁 Project Structure](#-project-structure)
+* [🔧 Configuration](#-configuration)
+* [📚 Documentation](#-documentation)
+* [🐞 Troubleshooting](#-troubleshooting)
+* [🛠️ Future Improvements](#️-future-improvements)
+* [🤝 Contributors](#-contributors)
+* [📄 License](#-license)
 
 ---
 
 ## 📦 Features
 
-✅ Modular microservices  
-✅ Containerized with Docker & Docker Compose  
-✅ RESTful APIs for all services  
-✅ SMTP-based email notifications  
-✅ Health check & testing scripts  
-✅ Scalable architecture ready for orchestration  
+✅ Modular architecture with isolated services
+✅ Dockerized for easy deployment and reproducibility
+✅ RESTful APIs for all major operations
+✅ Real-time communication using RabbitMQ
+✅ Email notifications via SMTP
+✅ MongoDB and Redis integration
+✅ Health checks and utility scripts
+✅ Configurable and scalable
 
 ---
 
 ## 🔧 Architecture
 
+```mermaid
+graph TD;
+    UserService -->|REST| AuthService;
+    UserService --> TripService;
+    TripService <--> PaymentService;
+    PaymentService --> NotificationService;
+    UserService --> NotificationService;
+    PaymentService --> NotificationService;
+    NotificationService -->|SMTP| EmailService;
+    UserService -->|AMQP| RabbitMQ;
+    AuthService -->|Mongo| MongoDB;
+    PaymentService -->|Redis| Redis;
+
+    subgraph External Systems
+        MongoDB
+        Redis
+        RabbitMQ
+        EmailService
+    end
 ```
 
-\[ User Service ] ---> \[ Auth Service ]
-\|                     |
-v                     v
-\[ Trip Service ] <--> \[ Payment Service ] <--> \[ Notification Service ]
-|
-v
-\[ MongoDB | Redis | RabbitMQ ]
-
-````
-
-> Each box represents an isolated microservice with its own responsibilities, data storage, and API.
+> Each service is fully encapsulated with its own database, environment configuration, and API endpoint.
 
 ---
 
 ## ⚙️ Installation
 
-> Make sure you have **Docker** and **Docker Compose** installed.
+> 🛠 Prerequisites: Ensure **Docker** and **Docker Compose** are installed.
 
 ```bash
 # Clone the repository
 git clone <repo-url>
 cd AuroraVoyages-courseProject
 
-# Build and start all services
+# Build and launch the platform
 docker-compose up --build
-````
+```
 
-🔍 Check services:
+✅ After deployment, verify service health:
 
 ```bash
-# For Linux/Mac
+# For Linux/macOS
 ./test-services.sh
 
 # For Windows
@@ -88,10 +100,10 @@ check-services.bat
 
 ## 🚀 Usage
 
-* **Frontend**: `http://localhost:3000`
-* **Example API Endpoint**: `http://localhost:8001/api/users`
+* **Frontend UI**: `http://localhost:3000`
+* **Sample API Endpoint**: `http://localhost:8001/api/users`
 
-Use `test-api.js` to perform sample API requests:
+📬 Run test requests using:
 
 ```bash
 node test-api.js
@@ -101,18 +113,20 @@ node test-api.js
 
 ## 🧪 API Testing
 
-Sample request:
+Example: User Registration Request
 
 ```http
 POST /api/users/register
 Content-Type: application/json
 
 {
-  "name": "Alice",
-  "email": "alice@example.com",
+  "name": "Sarim",
+  "email": "sarim@example.com",
   "password": "securepass"
 }
 ```
+
+> Full API details are documented in each service's sub-directory.
 
 ---
 
@@ -120,66 +134,165 @@ Content-Type: application/json
 
 ```
 AuroraVoyages-courseProject/
-├── user-service/
+├── api-gateway/
+│   ├── logs/
+│   └── src/
+│       ├── config/
+│       ├── middleware/
+│       ├── routes/
+│       ├── services/
+│       └── utils/
+├── auth-service/
+│   ├── logs/
+│   └── src/
+│       ├── config/
+│       ├── controllers/
+│       ├── middleware/
+│       ├── models/
+│       ├── routes/
+│       ├── services/
+│       └── utils/
+├── backend/
+│   ├── cache/
+│   ├── config/
+│   ├── data/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── scripts/
+│   ├── uploads/
+│   └── utils/
+├── forum-service/
+│   ├── cmd/
+│   │   └── server/
+│   ├── internal/
+│   │   ├── config/
+│   │   ├── controllers/
+│   │   ├── middleware/
+│   │   ├── models/
+│   │   ├── repository/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   └── utils/
+│   └── migrations/
+├── frontend/
+│   ├── public/
+│   │   ├── api/
+│   │   ├── images/
+│   │   └── uploads/
+│   └── src/
+│       ├── components/
+│       │   ├── ar/
+│       │   ├── auth/
+│       │   ├── charts/
+│       │   ├── common/
+│       │   ├── culture/
+│       │   ├── destinations/
+│       │   ├── forum/
+│       │   ├── inspiration/
+│       │   ├── itinerary/
+│       │   ├── layout/
+│       │   ├── maps/
+│       │   ├── notifications/
+│       │   ├── packages/
+│       │   ├── payment/
+│       │   ├── pdf/
+│       │   ├── regulations/
+│       │   ├── routing/
+│       │   ├── search/
+│       │   ├── transport/
+│       │   ├── ui/
+│       │   ├── uploads/
+│       │   ├── utils/
+│       │   ├── vr/
+│       │   └── weather/
+│       ├── context/
+│       ├── pages/
+│       │   ├── admin/
+│       │   ├── forum/
+│       │   ├── inspiration/
+│       │   └── tourGuide/
+│       ├── services/
+│       ├── tests/
+│       └── utils/
+├── logs/
+├── mysql/
+│   └── init/
 ├── payment-service/
-├── trip-service/
-├── notification-service/
-├── docker-compose.yml
-├── test-api.js
-├── check-services.bat
-├── start-services.ps1
-└── docs/
-    ├── MICROSERVICES-README.md
-    ├── implementation-steps.md
-    └── microservices-implementation-plan.md
+│   ├── app/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   └── utils/
+│   └── logs/
+└── redis/
 ```
 
 ---
 
 ## 🔧 Configuration
 
-Each service uses environment variables or `.env` files.
+Each microservice uses environment variables (defined in `.env` files) for runtime configuration.
 
-**Common Configurations**:
+### Common Variables
 
-* `API_PORT`: Port number
-* `DB_URI`: Database connection string
-* `MAIL_CONFIG`: SMTP settings for email service
-* `SERVICE_ENDPOINTS`: Internal service URLs
+| Variable            | Description                        |
+| ------------------- | ---------------------------------- |
+| `API_PORT`          | Port the service runs on           |
+| `DB_URI`            | MongoDB or Redis connection string |
+| `MAIL_CONFIG`       | SMTP credentials for email service |
+| `JWT_SECRET`        | Secret key for auth service        |
+| `SERVICE_ENDPOINTS` | URLs for internal service calls    |
 
-🛠 Modify `docker-compose.override.yml` for local overrides.
+🔄 Modify `docker-compose.override.yml` for local development overrides.
 
 ---
 
 ## 📚 Documentation
 
-* [`MICROSERVICES-README.md`](./docs/MICROSERVICES-README.md) – Service breakdown and responsibilities
-* [`implementation-steps.md`](./docs/implementation-steps.md) – Setup steps and explanations
-* [`microservices-implementation-plan.md`](./docs/microservices-implementation-plan.md) – Planning and architecture
+Comprehensive documentation is available in the `docs/` directory:
+
+* 📄 [`MICROSERVICES-README.md`](./docs/MICROSERVICES-README.md) – Service breakdown and responsibilities
+* 🧱 [`implementation-steps.md`](./docs/implementation-steps.md) – Deployment and testing guidance
+* 🧭 [`microservices-implementation-plan.md`](./docs/microservices-implementation-plan.md) – Design rationale and planning
 
 ---
 
 ## 🐞 Troubleshooting
 
-| Issue                   | Solution                                                 |
-| ----------------------- | -------------------------------------------------------- |
-| Port conflicts          | Modify ports in `docker-compose.override.yml`            |
-| Services not starting   | Run `docker-compose up --build` to rebuild containers    |
-| Database not connecting | Check `DB_URI` values in env files                       |
-| Logs not showing        | Use `docker-compose logs <service-name>` for diagnostics |
+| Problem                   | Solution                                        |
+| ------------------------- | ----------------------------------------------- |
+| 🧱 Port conflict          | Update ports in `docker-compose.override.yml`   |
+| 🐌 Service not responding | Rebuild with `docker-compose up --build`        |
+| ❌ DB connection failed    | Verify `DB_URI` in respective `.env` files      |
+| 🔍 Missing logs           | Use `docker-compose logs <service>` to diagnose |
+
+---
+
+## 🛠️ Future Improvements
+
+* [ ] Integrate Kubernetes for orchestration
+* [ ] Add OAuth2-based authentication
+* [ ] Implement logging with ELK stack
+* [ ] Add unit & integration tests with CI/CD
+* [ ] Convert services to gRPC (optional)
 
 ---
 
 ## 🤝 Contributors
 
-👤 **\[Muhammad Sarim]** – Project Lead
-🎓 Developed as part of \[Fast National University CFD Campus]
+| Name                                                                 | Role         | Institution                         |
+| -------------------------------------------------------------------- | ------------ | ----------------------------------- |
+| [Muhammad Sarim](https://github.com/M-Sarim)                         | Project Lead | FAST National University CFD Campus |
+| [Furqan Buttar](https://github.com/boltbuttar)                       | Developer    | FAST National University CFD Campus |
+| [Usman Aamir](https://github.com/UsmanAamir01)                       | Developer    | FAST National University CFD Campus |
 
 ---
 
 ## 📄 License
 
 This project is licensed under the **MIT License**.
-See the [LICENSE](./LICENSE) file for details.
+See the [LICENSE](./LICENSE) file for full details.
 
 ---
