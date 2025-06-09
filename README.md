@@ -1281,11 +1281,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support & Community
 
 ### Getting Support
-- 🐛 **Bug Reports**: [Create an issue](https://github.com/your-repo/issues/new?template=bug_report.md)
-- 💡 **Feature Requests**: [Request a feature](https://github.com/your-repo/issues/new?template=feature_request.md)
-- 📧 **Email Support**: support@auroravoyages.com
-- 📚 **Documentation**: [Wiki](https://github.com/your-repo/wiki)
-- 💬 **Community Forum**: [Discussions](https://github.com/your-repo/discussions)
+- 🐛 **Bug Reports**: [Create an issue](https://github.com/M-Sarim/AuroraVoyages/issues/new?template=bug_report.md)
+- 💡 **Feature Requests**: [Request a feature](https://github.com/M-Sarim/AuroraVoyages/issues/new?template=feature_request.md)
+- 📧 **Email Support**: auroravoyagesinfo@gmail.com
+- 📚 **Documentation**: [Wiki](https://github.com/M-Sarim/AuroraVoyages/wiki)
+- 💬 **Community Forum**: [Discussions](https://github.com/M-Sarim/AuroraVoyages/discussions)
 
 ### Response Times
 - 🔴 **Critical Issues**: Within 24 hours
@@ -1375,8 +1375,8 @@ Made with ❤️ by the [Aurora Voyages Team](https://github.com/M-Sarim)
 
 **Team Members:**
 - [M-Sarim](https://github.com/M-Sarim) - Lead Developer
-- [usmanaamir01](https://github.com/usmanaamir01) - Frontend Developer
-- [boltbuttar](https://github.com/boltbuttar) - Full Stack Developer
+- [usmanaamir01](https://github.com/usmanaamir01) - Full Stack Developer
+- [boltbuttar](https://github.com/boltbuttar) - Frontend Developer
 
 [GitHub Repository](https://github.com/M-Sarim/AuroraVoyages) • [Issues](https://github.com/M-Sarim/AuroraVoyages/issues) • [Discussions](https://github.com/M-Sarim/AuroraVoyages/discussions) • [Support](mailto:auroravoyagesinfo@gmail.com)
 
