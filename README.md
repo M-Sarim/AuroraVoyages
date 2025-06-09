@@ -1251,7 +1251,7 @@ Solution:
 1. **Check Documentation**: Review this README and inline comments
 2. **Search Issues**: Look for similar issues on GitHub
 3. **Create Issue**: If problem persists, create a detailed issue
-4. **Contact Support**: Email support@auroravoyages.com
+4. **Contact Support**: Email auroravoyagesinfo@gmail.com
 5. **Community Forum**: Join our community discussions
 
 ### Debug Mode
