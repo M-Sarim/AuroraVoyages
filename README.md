@@ -1285,7 +1285,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - 💡 **Feature Requests**: [Request a feature](https://github.com/M-Sarim/AuroraVoyages/issues/new?template=feature_request.md)
 - 📧 **Email Support**: auroravoyagesinfo@gmail.com
 - 📚 **Documentation**: [Wiki](https://github.com/M-Sarim/AuroraVoyages/wiki)
-- 💬 **Community Forum**: [Discussions](https://github.com/M-Sarim/AuroraVoyages/discussions)
 
 ### Response Times
 - 🔴 **Critical Issues**: Within 24 hours
