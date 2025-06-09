@@ -1370,7 +1370,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 [![GitHub forks](https://img.shields.io/github/forks/M-Sarim/AuroraVoyages.svg?style=social&label=Fork)](https://github.com/M-Sarim/AuroraVoyages/fork)
 [![GitHub watchers](https://img.shields.io/github/watchers/M-Sarim/AuroraVoyages.svg?style=social&label=Watch)](https://github.com/M-Sarim/AuroraVoyages)
 
-Made with ❤️ by the [Aurora Voyages Team](https://github.com/M-Sarim)
+Made with ❤️ by the [Aurora Voyages Team]
 
 **Team Members:**
 - [M-Sarim](https://github.com/M-Sarim) - Lead Developer
