@@ -1362,7 +1362,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-<div align="center">
 
 **Aurora Voyages** - Empowering Pakistani adventurers to explore the world! 🌍✈️
 
@@ -1370,13 +1369,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 [![GitHub forks](https://img.shields.io/github/forks/M-Sarim/AuroraVoyages.svg?style=social&label=Fork)](https://github.com/M-Sarim/AuroraVoyages/fork)
 [![GitHub watchers](https://img.shields.io/github/watchers/M-Sarim/AuroraVoyages.svg?style=social&label=Watch)](https://github.com/M-Sarim/AuroraVoyages)
 
-Made with ❤️ by the [Aurora Voyages Team]
+Made with passion by the **Aurora Voyages Team:**
 
-**Team Members:**
 - [M-Sarim](https://github.com/M-Sarim) - Lead Developer
 - [usmanaamir01](https://github.com/usmanaamir01) - Full Stack Developer
 - [boltbuttar](https://github.com/boltbuttar) - Frontend Developer
 
 [GitHub Repository](https://github.com/M-Sarim/AuroraVoyages) • [Issues](https://github.com/M-Sarim/AuroraVoyages/issues) • [Discussions](https://github.com/M-Sarim/AuroraVoyages/discussions) • [Support](mailto:auroravoyagesinfo@gmail.com)
 
-</div>
