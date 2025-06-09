@@ -1375,5 +1375,5 @@ Made with passion by the **Aurora Voyages Team:**
 - [usmanaamir01](https://github.com/usmanaamir01) - Full Stack Developer
 - [boltbuttar](https://github.com/boltbuttar) - Frontend Developer
 
-[GitHub Repository](https://github.com/M-Sarim/AuroraVoyages) • [Issues](https://github.com/M-Sarim/AuroraVoyages/issues) • [Discussions](https://github.com/M-Sarim/AuroraVoyages/discussions) • [Support](mailto:auroravoyagesinfo@gmail.com)
+[GitHub Repository](https://github.com/M-Sarim/AuroraVoyages) • [Issues](https://github.com/M-Sarim/AuroraVoyages/issues) • [Support](mailto:auroravoyagesinfo@gmail.com)
 
