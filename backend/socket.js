@@ -10,6 +10,7 @@ const initializeSocket = (server) => {
         "http://localhost:3000",
         "http://localhost:3001",
         "http://localhost:5000",
+        "https://delightful-moss-095e86f00.1.azurestaticapps.net"
       ],
       methods: ["GET", "POST"],
       credentials: true,

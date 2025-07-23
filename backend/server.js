@@ -50,12 +50,14 @@ app.use(
       "http://localhost:3000",
       "http://localhost:5000",
       "http://localhost:3001",
+      "https://delightful-moss-095e86f00.1.azurestaticapps.net",
     ],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "x-auth-token"],
   })
 );
+
 app.use(express.json()); // Make sure this is before any routes
 
 // Log all requests for debugging
